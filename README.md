@@ -19,10 +19,6 @@
 ![添加](document/demo/2.jpg)
 
 
-## static
-
->  inspinia 2.9 model   前端基础模板(实际线上可以删除掉本目录)
-
 ## templates
 
 * base  网页基本模板
@@ -49,6 +45,8 @@ python manage.py  runserver 0.0.0.0:80
 
 * 有问题 可以加QQ群： 620176501  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bbe5716e8bd2075cb27029bd5dd97e22fc4d83c0f61291f47ed3ed6a4195b024"><img border="0" src="https://github.com/hequan2017/cmdb/blob/master/static/img/group.png"  alt="django开发讨论群" title="django开发讨论群"></a>
 * 欢迎提出你的需求和意见,或者来加入到本项目中一起开发。
+* inspinia 2.9 model   前端基础模板,可以加群,在群共享里面有。
+
 
 ## 作者
 * 何全 
