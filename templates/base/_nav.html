@@ -1,0 +1,72 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu chrome-nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    {% if  user.avatar %}
+                        <span>
+                   <img alt="image" class="img-circle" style="width:48px; height:48px;" src="{{ user.avatar }}"/>
+                             </span>
+                    {% endif %}
+
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+
+
+                            <span class="clear"> <span class="block m-t-xs"> <strong
+                                    class="font-bold">{{ user }}</strong>
+
+                             </span> <span class="text-muted text-xs block">
+                                {% ifequal  user.is_superuser  1 %}
+                                    管理员 {% else %}   {{ user.position }} {% endifequal %}
+
+                                <b class="caret"></b></span> </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="{% url  "system:password_update" %}">修改密码</a></li>
+                        <li><a href="{% url  "system:logout" %}">退出</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    海豹
+                </div>
+            </li>
+            <li>
+                <a href="{% url "index" %}"> <i class="fa fa-dashboard"></i> <span class="nav-label">首页</span>
+                </a>
+            </li>
+
+
+            <li class="assets">
+                <a href="#"> <i class="fa fa-gitlab"></i> <span class="nav-label">资产管理</span></a>
+
+
+                <ul class="nav nav-second-level">
+                    {% if perms.assets.add_ecs %}
+                        <li class="ecs-create">
+                            <a href="{% url "assets:ecs-create" %}">添加资产</a>
+                        </li>
+                    {% endif %}
+                    {% if perms.assets.view_ecs %}
+                        <li class="ecs-list">
+                            <a href="{% url "assets:ecs-list" %}">资产列表</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </li>
+
+
+
+            {% ifequal  user.is_superuser  1 %}
+
+                <li>
+                    <a href="/admin" target="_blank"><i class="fa fa-gears"></i> <span class="nav-label">管理界面</span>
+                    </a>
+                </li>
+            {% endifequal %}
+
+
+        </ul>
+
+    </div>
+</nav>

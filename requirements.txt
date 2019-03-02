@@ -1,0 +1,3 @@
+django
+django-bootstrap4
+django-pure-pagination

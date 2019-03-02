@@ -1,0 +1,46 @@
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block  title %}{% endblock %}</title>
+
+    {% include  "base/_css.html" %}
+    {% block header-css %}
+    {% endblock %}
+
+
+</head>
+
+<body>
+<div id="wrapper">
+
+
+    {% include "base/_nav.html" %}
+
+    <div id="page-wrapper" class="gray-bg">
+        {% include  "base/_navbar-static-top.html" %}
+
+        {% block page-content %}
+
+
+        {% endblock %}
+        {% include  "base/_footer.html" %}
+
+    </div>
+</div>
+
+</body>
+
+{% include  "base/_js.html" %}
+
+{% block footer-js %}
+{% endblock %}
+
+</html>

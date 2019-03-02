@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>inspinia 2.9 | 发票打印</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="white-bg">
+                <div class="wrapper wrapper-content p-xl">
+                    <div class="ibox-content p-xl">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>从:</h5>
+                                    <address>
+                                        <strong>inspinia 2.9</strong><br>
+                                        北京市朝阳区某道某街道<br>
+                                        北京 100000<br>
+                                        <abbr title="Phone">电话:</abbr> (86) 1234-5678
+                                    </address>
+                                </div>
+
+                                <div class="col-sm-6 text-right">
+                                    <h4>发票号码</h4>
+                                    <h4 class="text-navy">INV-000567F7-00</h4>
+                                    <span>至:</span>
+                                    <address>
+                                        <strong>inspinia 2.9</strong><br>
+                                        北京市朝阳区某道某街道<br>
+                                        北京 100000<br>
+                                        <abbr title="Phone">电话:</abbr> (86) 1234-5678
+                                    </address>
+                                    <p>
+                                        <span><strong>发票日期:</strong> 2017.12.12</span><br/>
+                                        <span><strong>截止日期:</strong> 2017.12.15</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive m-t">
+                                <table class="table invoice-table">
+                                    <thead>
+                                    <tr>
+                                        <th>物品清单</th>
+                                        <th>数量</th>
+                                        <th>单价</th>
+                                        <th>税收</th>
+                                        <th>总价</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><div><strong>干锅鱼</strong></div>
+                                            <small>干锅鱼介绍</small></td>
+                                        <td>1</td>
+                                        <td>$26.00</td>
+                                        <td>$5.98</td>
+                                        <td>$31,98</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div><strong>清蒸鱼</strong></div>
+                                            <small>清蒸鱼介绍</small></td>
+                                        <td>2</td>
+                                        <td>$80.00</td>
+                                        <td>$36.80</td>
+                                        <td>$196.80</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div><strong>红烧鱼</strong></div>
+                                            <small>红烧鱼介绍</small></td>
+                                        <td>3</td>
+                                        <td>$420.00</td>
+                                        <td>$193.20</td>
+                                        <td>$1033.20</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div><!-- /table-responsive -->
+
+                            <table class="table invoice-total">
+                                <tbody>
+                                <tr>
+                                    <td><strong>价格 :</strong></td>
+                                    <td>$1026.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>税收 :</strong></td>
+                                    <td>$235.98</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>总额 :</strong></td>
+                                    <td>$1261.98</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="well m-t"><strong>客户签名</strong>
+                                小明
+                            </div>
+                        </div>
+
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+
+    <script type="text/javascript">
+        window.print();
+    </script>
+
+</body>
+
+</html>

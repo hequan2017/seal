@@ -1,0 +1,101 @@
+import logging
+from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.shortcuts import redirect, render
+from system.models import Users
+from django.urls import reverse_lazy
+from django.contrib.auth.backends import ModelBackend
+from django.db.models import Q
+from system.form import UserPasswordForm
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView, View, DetailView, CreateView, UpdateView
+from django.contrib.auth import logout
+logger = logging.getLogger('users')
+
+
+class CustomBackend(ModelBackend):
+
+    """
+    用户名字/邮箱名字 登录
+    :param request:
+    :return:
+    """
+
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        try:
+            user = Users.objects.get(Q(username=username) | Q(email=username))
+            if user.check_password(password):
+                return user
+        except Exception as e:
+            logger.error(e)
+            return None
+
+
+def login_view(request):
+    """
+    登录
+    :param request: username,password
+    :return:
+    """
+
+    error_msg = "用户名或密码错误,或者被禁用,请重试"
+
+    if request.method == "GET":
+        return render(request, 'system/login.html', {'error_msg': error_msg, })
+
+    if request.method == "POST":
+        u = request.POST.get("username")
+        p = request.POST.get("password")
+        user = authenticate(request, username=u, password=p)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                request.session['is_login'] = True
+                login_ip = request.META['REMOTE_ADDR']
+                return redirect('/index')
+            else:
+                return render(request, 'system/login.html', {'error_msg': error_msg, })
+        else:
+            return render(request, 'system/login.html', {'error_msg': error_msg, })
+
+
+@login_required(login_url="/system/login")
+def index(request):
+    """
+    首页
+    :param request:
+    :return:
+    """
+    return render(request, 'system/index.html')
+
+
+class UserPasswordUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    修改密码
+    :param request:
+    :return:
+    """
+    template_name = 'system/password.html'
+    model = Users
+    form_class = UserPasswordForm
+    success_url = reverse_lazy('system:logout')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(**kwargs)
+
+    def get_success_url(self):
+        return super().get_success_url()
+
+
+def logout_view(request):
+    """
+    注销
+    :param request:
+    :return:
+    """
+    logout(request)
+    return redirect('system:login')

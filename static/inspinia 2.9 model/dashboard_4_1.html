@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | 主页风格 v.4</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Morris -->
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">王宇</span>
+                            <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="profile.html">个人信息</a></li>
+                            <li><a class="dropdown-item" href="contacts.html">好友</a></li>
+                            <li><a class="dropdown-item" href="mailbox.html">信箱</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="index.html">主页示例 v.1</a></li>
+                        <li><a href="dashboard_2.html">主页示例 v.2</a></li>
+                        <li><a href="dashboard_3.html">主页示例 v.3</a></li>
+                        <li class="active"><a href="dashboard_4_1.html">主页示例 v.4</a></li>
+                        <li><a href="dashboard_5.html">主页示例 v.5 </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">图表</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
+                        <li><a href="graph_chartjs.html">Chart.js</a></li>
+                        <li><a href="graph_chartist.html">Chartist</a></li>
+                        <li><a href="c3.html">c3 charts</a></li>
+                        <li><a href="graph_peity.html">Peity Charts</a></li>
+                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">邮件 </span><span class="label label-warning float-right">16/24</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="mailbox.html">收件箱</a></li>
+                        <li><a href="mail_detail.html">邮件内容</a></li>
+                        <li><a href="mail_compose.html">撰写邮件</a></li>
+                        <li><a href="email_template.html">邮件模板</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">指标</span>  </a>
+                </li>
+                <li>
+                    <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">窗口小部件</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="form_basic.html">基本表单</a></li>
+                        <li><a href="form_advanced.html">高级表单</a></li>
+                        <li><a href="form_wizard.html">表单向导</a></li>
+                        <li><a href="form_file_upload.html">文件上传</a></li>
+                        <li><a href="form_editors.html">编辑器</a></li>
+                        <li><a href="form_autocomplete.html">搜索自动补全</a></li>
+                        <li><a href="form_markdown.html">Markdown编辑器</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">应用</span>  <span class="float-right label label-primary">特别</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="contacts.html">名片</a></li>
+                        <li><a href="profile.html">会员</a></li>
+                        <li><a href="profile_2.html">会员 v.2</a></li>
+                        <li><a href="contacts_2.html">联系人 v.2</a></li>
+                        <li><a href="projects.html">项目</a></li>
+                        <li><a href="project_detail.html">项目详情</a></li>
+                        <li><a href="activity_stream.html">活动</a></li>
+                        <li><a href="teams_board.html">团队</a></li>
+                        <li><a href="social_feed.html">社交</a></li>
+                        <li><a href="clients.html">客户端</a></li>
+                        <li><a href="full_height.html">Outlook 视图</a></li>
+                        <li><a href="vote_list.html">投票</a></li>
+                        <li><a href="file_manager.html">文件管理器</a></li>
+                        <li><a href="calendar.html">日历</a></li>
+                        <li><a href="issue_tracker.html">问题</a></li>
+                        <li><a href="blog.html">博客</a></li>
+                        <li><a href="article.html">文章</a></li>
+                        <li><a href="faq.html">帮助</a></li>
+                        <li><a href="timeline.html">时间线</a></li>
+                        <li><a href="pin_board.html">便签</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">页面</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="search_results.html">搜索</a></li>
+                        <li><a href="lockscreen.html">锁屏</a></li>
+                         <li><a href="invoice.html">发票</a></li>
+                        <li><a href="login.html">登录</a></li>
+                        <li><a href="login_two_columns.html">登录 v.2</a></li>
+                        <li><a href="forgot_password.html">忘记密码</a></li>
+                        <li><a href="register.html">注册</a></li>
+                        <li><a href="404.html">404 页面</a></li>
+                        <li><a href="500.html">500 页面</a></li>
+                        <li><a href="empty_page.html">空白页</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">组件</span><span class="label label-info float-right">新</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="toastr_notifications.html">toastr 通知</a></li>
+                        <li><a href="nestable_list.html">拖动排序</a></li>
+                        <li><a href="agile_board.html">Agile board</a></li>
+                        <li><a href="timeline_2.html">时间轴 v.2</a></li>
+                        <li><a href="diff.html">Diff</a></li>
+                        <li><a href="pdf_viewer.html">PDF 查看器</a></li>
+                        <li><a href="i18support.html">i18 support</a></li>
+                        <li><a href="sweetalert.html">弹层组件</a></li>
+                        <li><a href="idle_timer.html">空闲计时器</a></li>
+                        <li><a href="truncate.html">截断字符串</a></li>
+                        <li><a href="password_meter.html">密码</a></li>
+                        <li><a href="spinners.html">加载动画</a></li>
+                        <li><a href="spinners_usage.html">Spinners usage</a></li>
+                        <li><a href="tinycon.html">Live favicon</a></li>
+                        <li><a href="google_maps.html">谷歌地图</a></li>
+                        <li><a href="datamaps.html">数据地图</a></li>
+                        <li><a href="social_buttons.html">社交按钮</a></li>
+                        <li><a href="code_editor.html">代码编辑器</a></li>
+                        <li><a href="modal_window.html">模态窗口</a></li>
+                        <li><a href="clipboard.html">文本剪贴板</a></li>
+                        <li><a href="text_spinners.html">Text spinners</a></li>
+                        <li><a href="forum_main.html">论坛</a></li>
+                        <li><a href="validation.html">验证</a></li>
+                        <li><a href="tree_view.html">树形菜单</a></li>
+                        <li><a href="loading_buttons.html">加载按钮</a></li>
+                        <li><a href="chat_view.html">聊天视窗</a></li>
+                        <li><a href="masonry.html">瀑布流布局</a></li>
+                        <li><a href="tour.html">新手指引</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI 元素</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="typography.html">排版</a></li>
+                        <li><a href="icons.html">图标</a></li>
+                        <li><a href="draggable_panels.html">拖动排序</a></li> <li><a href="resizeable_panels.html">内容缩放</a></li>
+                        <li><a href="buttons.html">按钮</a></li>
+                        <li><a href="video.html">视频</a></li>
+                        <li><a href="tabs_panels.html">面板</a></li>
+                        <li><a href="tabs.html">标签</a></li>
+                        <li><a href="notifications.html">通知 & 工具</a></li>
+                        <li><a href="helper_classes.html">css 辅助</a></li>
+                        <li><a href="badges_labels.html">徽章 & 标签 & 进度条</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">栅格</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="table_basic.html">静态表格</a></li>
+                        <li><a href="table_data_tables.html">数据表格</a></li>
+                        <li><a href="table_foo_table.html">Foo 表格</a></li>
+                        <li><a href="jq_grid.html">jqGrid</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">商城</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="ecommerce_products_grid.html">产品图表</a></li>
+                        <li><a href="ecommerce_product_list.html">产品列表</a></li>
+                        <li><a href="ecommerce_product.html">产品编辑</a></li>
+                        <li><a href="ecommerce_product_detail.html">产品详情</a></li>
+                        <li><a href="ecommerce-cart.html">购物车</a></li>
+                        <li><a href="ecommerce-orders.html">订购页</a></li>
+                        <li><a href="ecommerce_payments.html">支付页</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">相册</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="basic_gallery.html">基本图库</a></li>
+                        <li><a href="slick_carousel.html">图片切换</a></li>
+                        <li><a href="carousel.html">Bootstrap 相册</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">菜单 </span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li>
+                            <a href="#">三级菜单 <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">三级菜单</a>
+                                </li>
+                                <li>
+                                    <a href="#">三级菜单</a>
+                                </li>
+                                <li>
+                                    <a href="#">三级菜单</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#">二级菜单</a></li>
+                        <li>
+                            <a href="#">二级菜单</a></li>
+                        <li>
+                            <a href="#">二级菜单</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS 动画 </span><span class="label label-info float-right">62</span></a>
+                </li>
+                <li class="landing_link">
+                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span> <span class="label label-warning float-right">新</span></a>
+                </li>
+                <li class="special_link">
+                    <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">组件</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">欢迎来到inspinia 2.9管理后台</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a class="dropdown-item float-left" href="profile.html">
+                                    <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                </a>
+                                <div>
+                                    <small class="float-right">46 小时前</small>
+                                    <strong>小明</strong> 评论了 <strong>小红</strong>. <br>
+                                    <small class="text-muted">2017.10.06 7:58</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a class="dropdown-item float-left" href="profile.html">
+                                    <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                </a>
+                                <div>
+                                    <small class="float-right text-navy">5 小时前</small>
+                                    <strong>小红</strong> 打电话给了 <strong>小黑</strong>. <br>
+                                    <small class="text-muted">2017.10.06 7:58</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a class="dropdown-item float-left" href="profile.html">
+                                    <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                </a>
+                                <div>
+                                    <small class="float-right">23 小时前</small>
+                                    <strong>小黑</strong> 点赞了 <strong>小红</strong>. <br>
+                                    <small class="text-muted">2017.10.06 7:58</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html" class="dropdown-item">
+                                    <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html" class="dropdown-item">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 你有16条消息
+                                    <span class="float-right text-muted small">4 分钟前</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="profile.html" class="dropdown-item">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
+                                    <span class="float-right text-muted small">12 分钟前</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="grid_options.html" class="dropdown-item">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> 重启服务器
+                                    <span class="float-right text-muted small">4 分钟前</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html" class="dropdown-item">
+                                    <strong>查看所有信息</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> 注销
+                    </a>
+                </li>
+                <li>
+                    <a class="right-sidebar-toggle">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+
+
+        <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <span class="label label-success float-right">浏览量</span>
+                        <h5>月</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">386,200</h1>
+                        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                        <small>总计浏览量</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <span class="label label-info float-right">订单</span>
+                        <h5>年</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">80,800</h1>
+                        <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
+                        <small>新订单</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <span class="label label-primary float-right">访问人次</span>
+                        <h5>今天</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="no-margins">406,42</h1>
+                                <div class="font-bold text-navy">44% <i class="fa fa-level-up"></i> <small>增长较快</small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="no-margins">206,12</h1>
+                                <div class="font-bold text-navy">22% <i class="fa fa-level-up"></i> <small>增长较慢</small></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>月收入</h5>
+                        <div class="ibox-tools">
+                            <span class="label label-primary">2017.02 更新</span>
+                        </div>
+                    </div>
+                    <div class="ibox-content no-padding">
+                        <div class="flot-chart m-t-lg" style="height: 55px;">
+                            <div class="flot-chart-content" id="flot-chart1"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div>
+                                        <span class="float-right text-right">
+                                        <small>在过去销售最高的地区: <strong>广东</strong></small>
+                                            <br/>
+                                            共销售: 162,862
+                                        </span>
+                            <h3 class="font-bold no-margins">
+                                半年收入利润率
+                            </h3>
+                            <small>市场部</small>
+                        </div>
+
+                        <div class="m-t-sm">
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div>
+                                        <canvas id="lineChart" height="114"></canvas>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="stat-list m-t-lg">
+                                        <li>
+                                            <h2 class="no-margins">2,346</h2>
+                                            <small>年度总订单</small>
+                                            <div class="progress progress-mini">
+                                                <div class="progress-bar" style="width: 48%;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h2 class="no-margins ">4,422</h2>
+                                            <small>上个月订单</small>
+                                            <div class="progress progress-mini">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="m-t-md">
+                            <small class="float-right">
+                                <i class="fa fa-clock-o"> </i>
+                                更新 2017.12.12
+                            </small>
+                            <small>
+                                <strong>销售分析:</strong> 这个价值随着时间的推移而改变，上个月达到5万美元以上。
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <span class="label label-warning float-right">数据发生变化</span>
+                        <h5>用户活动</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-4">
+                                <small class="stats-label">访问页面 / 浏览量</small>
+                                <h4>236 321.80</h4>
+                            </div>
+
+                            <div class="col-4">
+                                <small class="stats-label">% 新访客</small>
+                                <h4>46.11%</h4>
+                            </div>
+                            <div class="col-4">
+                                <small class="stats-label">最后一周</small>
+                                <h4>432.021</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-4">
+                                <small class="stats-label">访问页面 / 浏览量</small>
+                                <h4>643 321.10</h4>
+                            </div>
+
+                            <div class="col-4">
+                                <small class="stats-label">% 新访客</small>
+                                <h4>92.43%</h4>
+                            </div>
+                            <div class="col-4">
+                                <small class="stats-label">最后一周</small>
+                                <h4>564.554</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-4">
+                                <small class="stats-label">访问页面 / 浏览量</small>
+                                <h4>436 547.20</h4>
+                            </div>
+
+                            <div class="col-4">
+                                <small class="stats-label">% 新访客</small>
+                                <h4>150.23%</h4>
+                            </div>
+                            <div class="col-4">
+                                <small class="stats-label">最后一周</small>
+                                <h4>124.990</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+        <div class="col-lg-12">
+        <div class="ibox ">
+        <div class="ibox-title">
+            <h5>自定义响应表格 </h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#" class="dropdown-item">Config option 1</a>
+                    </li>
+                    <li><a href="#" class="dropdown-item">Config option 2</a>
+                    </li>
+                </ul>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-9 m-b-xs">
+                    <div data-toggle="buttons" class="btn-group btn-group-toggle">
+                        <label class="btn btn-sm btn-white"> <input type="radio" id="option1" name="options"> 天 </label>
+                        <label class="btn btn-sm btn-white active"> <input type="radio" id="option2" name="options"> 周 </label>
+                        <label class="btn btn-sm btn-white"> <input type="radio" id="option3" name="options"> 月 </label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-sm" placeholder="搜索">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-primary" type="button">搜索!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+
+                        <th>#</th>
+                        <th>项目 </th>
+                        <th>名称 </th>
+                        <th>电话 </th>
+                        <th>公司 </th>
+                        <th>完成度 </th>
+                        <th>任务</th>
+                        <th>日期</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">0.52/1.561</span></td>
+                        <td>20%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">6,9</span></td>
+                        <td>40%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">3,1</span></td>
+                        <td>75%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">4,9</span></td>
+                        <td>18%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">6,9</span></td>
+                        <td>40%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">0.52/1.561</span></td>
+                        <td>20%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">4,9</span></td>
+                        <td>18%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">0.52/1.561</span></td>
+                        <td>20%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">6,9</span></td>
+                        <td>40%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">3,1</span></td>
+                        <td>75%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">4,9</span></td>
+                        <td>18%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">6,9</span></td>
+                        <td>40%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">0.52/1.561</span></td>
+                        <td>20%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>王者农药</td>
+                        <td>天美工作室</td>
+                        <td>86 1234 5678</td>
+                        <td>企鹅公司</td>
+                        <td><span class="pie">4,9</span></td>
+                        <td>18%</td>
+                        <td>2017.11.11</td>
+                        <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        </div>
+        </div>
+
+        </div>
+
+
+        </div>
+
+
+        <div class="footer">
+            <div class="float-right">
+                 <strong>2.9 inspinia</strong>
+            </div>
+            <div>
+                <strong>Copyright</strong> inspinia 2.9 &copy; 2014-2018
+            </div>
+        </div>
+
+        </div>
+        <div id="right-sidebar">
+            <div class="sidebar-container">
+
+                <ul class="nav nav-tabs navs-3">
+                    <li>
+                        <a class="nav-link active" data-toggle="tab" href="#tab-1"> 记录 </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-2"> 项目 </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-3"> <i class="fa fa-gear"></i> </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+
+
+                    <div id="tab-1" class="tab-pane active">
+
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-comments-o"></i> 最新记录</h3>
+                            <small><i class="fa fa-tim"></i> 你有10条新消息。</small>
+                        </div>
+
+                        <div>
+
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a1.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+
+                                        Lorem Ipsum的通道有许多变化。
+                                        <br>
+                                        <small class="text-muted">今天 4:21 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a2.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        使用Lorem Ipsum的观点是它具有或多或少的正常。
+                                        <br>
+                                        <small class="text-muted">昨天 2:45 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a3.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        这些年来，有时是意外的，有时是有目的的（注入幽默等）。
+                                        <br>
+                                        <small class="text-muted">昨天 1:10 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a4.jpg">
+                                    </div>
+
+                                    <div class="media-body">
+                                        Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                        <br>
+                                        <small class="text-muted">星期一 8:37 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a8.jpg">
+                                    </div>
+                                    <div class="media-body">
+
+                                        互联网上的所有Lorem Ipsum发电机往往重复。
+                                        <br>
+                                        <small class="text-muted">今天 4:21 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a7.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        再生。 Lorem Ipsum的第一行“Lorem ipsum dolor sit amet ..”来自1.10.32节的一行。
+                                        <br>
+                                        <small class="text-muted">昨天 2:45 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a3.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        从1500年代以来使用的Lorem Ipsum的标准块转载如下。
+                                        <br>
+                                        <small class="text-muted">昨天 1:10 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="float-left text-center">
+                                        <img alt="image" class="rounded-circle message-avatar" src="img/a4.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        揭开许多网站仍处于起步阶段。 各种版本有。
+                                        <br>
+                                        <small class="text-muted">星期一 8:37 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tab-2" class="tab-pane">
+
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-cube"></i> 最新项目</h3>
+                            <small><i class="fa fa-tim"></i> 你有14个项目。 10没有完成</small>
+                        </div>
+
+                        <ul class="sidebar-list">
+                            <li>
+                                <a href="#">
+                                    <div class="small float-right m-t-xs">9小时前</div>
+                                    <h4>业务估值</h4>
+                                    一个长期以来的事实是，读者会分心。
+
+                                    <div class="small">完成度: 22%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                    <div class="small text-muted m-t-xs">时间: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small float-right m-t-xs">9小时前</div>
+                                    <h4>与公司签订合同 </h4>
+                                    许多桌面出版包和网页编辑器。
+
+                                    <div class="small">完成度: 48%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small float-right m-t-xs">9小时前</div>
+                                    <h4>会议</h4>
+                                    通过查看其布局时页面的可读内容。
+
+                                    <div class="small">完成度: 14%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary float-right">NEW</span>
+                                    <h4>生成的</h4>
+                                    Lorem Ipsum的通道有许多变化。
+                                    <div class="small">完成度: 22%</div>
+                                    <div class="small text-muted m-t-xs">时间: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small float-right m-t-xs">9小时前</div>
+                                    <h4>业务估值</h4>
+                                    一个长期以来的事实是，读者会分心。
+
+                                    <div class="small">完成度: 22%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                    <div class="small text-muted m-t-xs">时间: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small float-right m-t-xs">9小时前</div>
+                                    <h4>与公司签订合同 </h4>
+                                    许多桌面出版包和网页编辑器。
+
+                                    <div class="small">完成度: 48%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small float-right m-t-xs">9小时前</div>
+                                    <h4>会议</h4>
+                                    通过查看其布局时页面的可读内容。
+
+                                    <div class="small">完成度: 14%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary float-right">NEW</span>
+                                    <h4>生成的</h4>
+                                    <!--<div class="small float-right m-t-xs">9小时前</div>-->
+                                    Lorem Ipsum的通道有许多变化。
+                                    <div class="small">完成度: 22%</div>
+                                    <div class="small text-muted m-t-xs">时间: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div id="tab-3" class="tab-pane">
+
+                        <div class="sidebar-title">
+                            <h3><i class="fa fa-gears"></i> 设置</h3>
+                            <small><i class="fa fa-tim"></i> 你有14个项目。 10没有完成</small>
+                        </div>
+
+                        <div class="setings-item">
+                    <span>
+                        显示通知
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                    <label class="onoffswitch-label" for="example">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        停用聊天
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
+                                    <label class="onoffswitch-label" for="example2">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        启用历史记录
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                    <label class="onoffswitch-label" for="example3">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        显示图表
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                    <label class="onoffswitch-label" for="example4">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        离线用户
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example5">
+                                    <label class="onoffswitch-label" for="example5">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        全球搜索
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example6">
+                                    <label class="onoffswitch-label" for="example6">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        每天更新
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                    <label class="onoffswitch-label" for="example7">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-content">
+                            <h4>设置</h4>
+                            <div class="small">
+                                我相信那个 Lorem Ipsum只是印刷和排版行业的虚拟文字。
+                                排版行业。 Lorem Ipsum自15世纪15年代以来一直是行业的标准虚拟文本。
+                                多年来，有时偶然地，有时是目的（注入幽默等）。
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="js/plugins/flot/curvedLines.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Jvectormap -->
+    <script src="js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+            var d1 = [[1262304000000, 6], [1264982400000, 3057], [1267401600000, 20434], [1270080000000, 31982], [1272672000000, 26602], [1275350400000, 27826], [1277942400000, 24302], [1280620800000, 24237], [1283299200000, 21004], [1285891200000, 12144], [1288569600000, 10577], [1291161600000, 10295]];
+            var d2 = [[1262304000000, 5], [1264982400000, 200], [1267401600000, 1605], [1270080000000, 6129], [1272672000000, 11643], [1275350400000, 19055], [1277942400000, 30062], [1280620800000, 39197], [1283299200000, 37000], [1285891200000, 27000], [1288569600000, 21000], [1291161600000, 17000]];
+
+            var data1 = [
+                { label: "Data 1", data: d1, color: '#17a084'},
+                { label: "Data 2", data: d2, color: '#127e68' }
+            ];
+            $.plot($("#flot-chart1"), data1, {
+                xaxis: {
+                    tickDecimals: 0
+                },
+                series: {
+                    lines: {
+                        show: true,
+                        fill: true,
+                        fillColor: {
+                            colors: [{
+                                opacity: 1
+                            }, {
+                                opacity: 1
+                            }]
+                        },
+                    },
+                    points: {
+                        width: 0.1,
+                        show: false
+                    },
+                },
+                grid: {
+                    show: false,
+                    borderWidth: 0
+                },
+                legend: {
+                    show: false,
+                }
+            });
+
+            var lineData = {
+                labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
+                datasets: [
+                    {
+                        label: "示例数据集1",
+                        backgroundColor: "rgba(26,179,148,0.5)",
+                        borderColor: "rgba(26,179,148,0.7)",
+                        pointBackgroundColor: "rgba(26,179,148,1)",
+                        pointBorderColor: "#fff",
+                        data: [48, 48, 60, 39, 56, 37, 30]
+                    },
+                    {
+                        label: "示例数据集2",
+                        backgroundColor: "rgba(220,220,220,0.5)",
+                        borderColor: "rgba(220,220,220,1)",
+                        pointBackgroundColor: "rgba(220,220,220,1)",
+                        pointBorderColor: "#fff",
+                        data: [65, 59, 40, 51, 36, 25, 40]
+                    }
+                ]
+            };
+
+            var lineOptions = {
+                responsive: true
+            };
+
+
+            var ctx = document.getElementById("lineChart").getContext("2d");
+            new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
+
+
+        });
+    </script>
+</body>
+</html>
