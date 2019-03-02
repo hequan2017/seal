@@ -41,7 +41,6 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     def get_success_url(self):
         return self.request.POST['__next__']
 
-
     def form_valid(self, form):  ##  保存结果 可以进行 手动 修改 再保存
         obj = form.save(commit=False)
         obj.save()
@@ -88,6 +87,7 @@ class EcsUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Ecs
     form_class = EcsForm
     template_name = 'assets/ecs-create.html'
+    success_url = reverse_lazy('assets:ecs-list')
 
     def get_context_data(self, **kwargs):
         context = {}
@@ -101,7 +101,8 @@ class EcsUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
         kwargs.update(context)
         return super().get_context_data(**kwargs)
 
-
+    def get_success_url(self):
+        return self.request.POST['__next__']
 
 
 class EcsDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
