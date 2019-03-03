@@ -11,7 +11,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, View, DetailView, CreateView, UpdateView
 from django.contrib.auth import logout
-logger = logging.getLogger('users')
+
+logger = logging.getLogger('system')
 
 
 class CustomBackend(ModelBackend):

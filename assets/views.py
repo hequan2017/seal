@@ -15,7 +15,7 @@ from assets.form import EcsForm
 logger = logging.getLogger('assets')
 
 
-## 关于 cbv 的 文档 http://ccbv.co.uk/projects/Django/2.0/django.views.generic.edit/
+## 关于 cbv 的 文档 http://ccbv.co.uk/projects/Django/2.1/django.views.generic.edit/
 class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     """
     Ecs 创建
@@ -59,7 +59,7 @@ class EcsListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = Ecs
     queryset = Ecs.objects.get_queryset().order_by('-id')
 
-    @get_list
+    @get_list  ## 处理查询
     def get_context_data(self, **kwargs):
         try:
             page = self.request.GET.get('page', 1)
@@ -71,7 +71,7 @@ class EcsListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
         context = {
             "ecs_list": ecs_list,
             'ecs_count': self.queryset.count() if self.queryset != '' else 0,
-            "filter_dict":self.filter_dict
+            "filter_dict":self.filter_dict   ## 把查询条件返回给前端
         }
 
         kwargs.update(context)
