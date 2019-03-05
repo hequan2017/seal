@@ -1,5 +1,8 @@
 # 海豹  
-
+![版本](https://img.shields.io/badge/release-0.1-blue.svg)
+![语言](https://img.shields.io/badge/language-python3.6-blue.svg)
+![语言](https://img.shields.io/badge/env-django2.1-red.svg)
+![bootstrap4](https://img.shields.io/badge/model-bootstrap4-mauve.svg)
 > django-base-templastes
 
 > 因本项目开始时间为3月1日,是 国际海豹日,故项目起名为  海豹 seal 
@@ -7,13 +10,12 @@
 > 主要为 django 基础开发平台, MVC 模式 开发.(非前后端分离) ,可以拿来直接开发 django项目。作者会在周末进行开发、更新。
 
 
-## 版本
-* v0.1
-
 ## 介绍
-* 基于bootstrap4+django2.1+python3.7(兼容3.6)+celery异步任务
+* 基于bootstrap4+django2.1+python3.6+celery异步任务
+* 前端模板 inspinia 2.9 
 * 会尽量多加一些注释
 * 采用cbv开发方式，提高开发效率
+* python3.7 兼容性未做测试
 
 
 ## DEMO
@@ -23,13 +25,18 @@
 
 ## templates
 
-* base  网页基本模板
-* system 平台基本网页(首页/登录/修改密码)
-* assets  资产管理  (增删改查例子)
+* base      网页基本模板
+* system    平台基本网页(首页/登录/修改密码)
+* assets    资产管理  (增删改查例子)
+* document  代码规范
+
+
 
 ## 部署
 
 ```bash
+yum install  python-devel mysql-devel  -y
+
 git clone https://github.com/hequan2017/seal
 cd seal
 python install -r requirements.txt
@@ -63,8 +70,6 @@ for i in Users.objects.all():
 ## 2019-03-05 14:41:18
 
 ```
-
-
 
 
 ### 售后服务

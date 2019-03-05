@@ -75,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'seal.wsgi.application'
 AUTH_USER_MODEL = 'system.users'
-AUTHENTICATION_BACKENDS = ('system.views.CustomBackend',)
+AUTHENTICATION_BACKENDS = ('system.views.CustomBackend',)  ## 重新登录验证,增加邮箱名字也可以用作登录
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -121,6 +121,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_AGE = 432000
 LOGIN_URL = '/auth/login'
 LANGUAGE_CODE = 'zh-Hans'

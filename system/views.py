@@ -61,6 +61,7 @@ def login_view(request):
             return render(request, 'system/login.html', {'error_msg': error_msg, })
 
 
+
 @login_required(login_url="/system/login")
 def index(request):
     """
@@ -69,6 +70,8 @@ def index(request):
     :return:
     """
     return render(request, 'system/index.html')
+
+
 
 
 class UserPasswordUpdateView(LoginRequiredMixin, UpdateView):

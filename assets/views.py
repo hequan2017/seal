@@ -26,6 +26,7 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     template_name = 'assets/ecs-create.html'
     success_url = reverse_lazy('assets:ecs-list')
 
+
     def get_context_data(self, **kwargs):
         context = {}
         if '__next__' in self.request.POST:  # 为了获取 点击本页之前的 浏览网页
@@ -50,6 +51,7 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
         print(form.errors)
         """If the form is invalid, render the invalid form."""
         return self.render_to_response(self.get_context_data(form=form))
+
 
 
 
