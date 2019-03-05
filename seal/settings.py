@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'system.apps.SystemConfig',
     'assets.apps.AssetsConfig',
     'bootstrap4',
+    'django_celery_results',
+    'django_celery_beat',
 
 ]
 
@@ -180,3 +182,29 @@ PAGINATION_SETTINGS = {
 
 # 表格table 一页 展示数据
 DISPLAY_PER_PAGE = 15
+
+
+## celery 4
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
+# CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROKER_URL = 'redis://localhost:6379/2'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERYD_CONCURRENCY = 4
+CELERY_TIMEZONE = 'Asia/Shanghai'
+CELERYD_MAX_TASKS_PER_CHILD = 10
+CELERYD_FORCE_EXECV = True
+
+# 设置默认不存结果
+# CELERY_IGNORE_RESULT = True
+CELERY_CREATE_MISSING_QUEUES = True
+CELERY_DISABLE_RATE_LIMITS = True
+CELERYD_TASK_SOFT_TIME_LIMIT = 600
+
+CELERY_TASK_RESULT_EXPIRES = 600
+CELERY_ENABLE_UTC = False
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+## 钉钉 报警机器人 地址  调用地方为 system.tasks.ding_ding_to_info
+web_hook_url=""

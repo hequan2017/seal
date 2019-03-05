@@ -1,4 +1,5 @@
 # 海豹  
+
 > django-base-templastes
 
 > 因本项目开始时间为3月1日,是 国际海豹日,故项目起名为  海豹 seal 
@@ -10,7 +11,7 @@
 * v0.1
 
 ## 介绍
-* 基于bootstrap4+django2.1+python3.7 
+* 基于bootstrap4+django2.1+python3.7(兼容3.6)+celery异步任务
 * 会尽量多加一些注释
 * 采用cbv开发方式，提高开发效率
 
@@ -39,8 +40,32 @@ python manage.py createsuperuser
 
 python manage.py  runserver 0.0.0.0:80
 
+```
+* 扩展功能
+```bash
+#需要安装redis
+#启动celery异步任务
+cd seal
+celery  -B   -A  seal  worker  -l  info
+```
+
+##  注意
+* 如果想直接拿来做生产项目,请重新生成一个 settings 文件里面的 SECRET_KEY 
+* 时区问题
+```python
+##因为开启了时区,所以django在数据库里面保存的为 utc 时间, 调用的时候会帮你 转为 东八区, celery会自动识别时间
+from django.utils import timezone
+for i in Users.objects.all():
+    print(i.last_login)  ## 直接读取时间,会是 utc时间,未转换, 如果需要处理 请注意
+    print(timezone.localtime(i.last_login).strftime("%Y-%m-%d %H:%M:%S"))  ## 时间格式化为 正常时间
+    
+## 2019-03-05 06:41:18.040809+00:00
+## 2019-03-05 14:41:18
 
 ```
+
+
+
 
 ### 售后服务
 
