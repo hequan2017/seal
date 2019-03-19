@@ -48,13 +48,21 @@ python manage.py createsuperuser
 python manage.py  runserver 0.0.0.0:80
 
 ```
-* 扩展功能
+* 扩展功能-异步1   推荐 定时任务用celery
 ```bash
 #需要安装redis
 #启动celery异步任务
 cd seal
 celery  -B   -A  seal  worker  -l  info
 ```
+
+* 扩展功能-异步2   普通异步任务 用  dramatiq
+```bash
+cd system/decorator/asynchronous/
+dramatiq  asynchronous  --watch  .  --log-file  /tmp/dramatiq.log
+
+```
+
 
 ##  注意
 * 如果想直接拿来做生产项目,请重新生成一个 settings 文件里面的 SECRET_KEY 
