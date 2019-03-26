@@ -3,11 +3,11 @@ from django.db import models
 
 class Ecs(models.Model):
     TYPE_CHOICES = (
-        ('0', '阿里云'),
-        ('1', '腾讯云'),
-        ('2', '华为云'),
-        ('3', '亚马逊'),
-        ('4', '其他'),
+        ('阿里云', '阿里云'),
+        ('腾讯云', '腾讯云'),
+        ('华为云', '华为云'),
+        ('亚马逊', '亚马逊'),
+        ('其他', '其他'),
     )
     hostname = models.CharField(max_length=96, verbose_name='主机名', blank=True, null=True, )
     type = models.CharField(choices=TYPE_CHOICES, max_length=16, verbose_name='主机类型')

@@ -11,6 +11,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.views.generic import ListView, View, DetailView, CreateView, UpdateView
 from assets.models import Ecs
 from assets.form import EcsForm
+from assets.serializers import EcsSerializer
+from rest_framework import permissions
+from rest_framework import generics
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.pagination import PageNumberPagination
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 logger = logging.getLogger('assets')
 
@@ -25,7 +34,6 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     form_class = EcsForm
     template_name = 'assets/ecs-create.html'
     success_url = reverse_lazy('assets:ecs-list')
-
 
     def get_context_data(self, **kwargs):
         context = {}
@@ -42,7 +50,7 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     def get_success_url(self):
         return self.request.POST['__next__']
 
-    def form_valid(self, form):  ##  保存结果 可以进行 手动 修改 再保存
+    def form_valid(self, form):  # 保存结果 可以进行 手动 修改 再保存
         obj = form.save(commit=False)
         obj.save()
         return super().form_valid(form)
@@ -51,8 +59,6 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
         print(form.errors)
         """If the form is invalid, render the invalid form."""
         return self.render_to_response(self.get_context_data(form=form))
-
-
 
 
 class EcsListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
@@ -73,12 +79,11 @@ class EcsListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
         context = {
             "ecs_list": ecs_list,
             'ecs_count': self.queryset.count() if self.queryset != '' else 0,
-            "filter_dict":self.filter_dict   ## 把查询条件返回给前端
+            "filter_dict": self.filter_dict  # 把查询条件返回给前端
         }
 
         kwargs.update(context)
         return super().get_context_data(**kwargs)
-
 
 
 class EcsUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
@@ -117,11 +122,10 @@ class EcsDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
         pk = self.kwargs.get(self.pk_url_kwarg, None)
         context = {
             "ecs": self.model.objects.get(id=pk),
-            "nid":pk
+            "nid": pk
         }
         kwargs.update(context)
         return super().get_context_data(**kwargs)
-
 
 
 class EcsDeleteView(LoginRequiredMixin, PermissionRequiredMixin, View):
@@ -136,3 +140,19 @@ class EcsDeleteView(LoginRequiredMixin, PermissionRequiredMixin, View):
         nid = self.request.POST.get('nid', None)
         self.model.objects.get(id=nid).delete()
         return HttpResponse(json.dumps(ret))
+
+
+# Ecs Api           drf 中文文档   http://drf.jiuyou.info/#/drf/requests
+class ApiEcsList(generics.ListCreateAPIView):
+    queryset = Ecs.objects.get_queryset().order_by('id')
+    serializer_class = EcsSerializer
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_fields = ('id', 'hostname', 'type', 'instance_id')
+    search_fields = ('id', 'hostname',)
+    permission_classes = (permissions.DjangoModelPermissions,)  # 继承 django的权限
+
+
+class ApiEcsDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Ecs.objects.get_queryset().order_by('id')
+    serializer_class = EcsSerializer
+    permission_classes = (permissions.DjangoModelPermissions,)

@@ -103,3 +103,8 @@ def logout_view(request):
     """
     logout(request)
     return redirect('system:login')
+
+
+class DisableCSRFCheck(object):
+    def process_request(self, request):
+        setattr(request, '_dont_enforce_csrf_checks', True)
