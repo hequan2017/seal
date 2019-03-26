@@ -17,7 +17,7 @@
 * 会尽量多加一些注释
 * 采用cbv开发方式，提高开发效率
 * 增加 drf  api 例子
-* vue版本前端  https://github.com/hequan2017/seal-vue 持续开发中(重点)` 
+* vue版本前端  https://github.com/hequan2017/seal-vue 持续开发中(重点)
 
 
 ## DEMO
