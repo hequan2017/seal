@@ -50,7 +50,7 @@ class EcsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     def get_success_url(self):
         return self.request.POST['__next__']
 
-    def form_valid(self, form):  # 保存结果 可以进行 手动 修改 再保存
+    def form_valid(self, form):  #  保存结果 可以进行 手动 修改 再保存
         obj = form.save(commit=False)
         obj.save()
         return super().form_valid(form)
@@ -147,7 +147,7 @@ class ApiEcsList(generics.ListCreateAPIView):
     queryset = Ecs.objects.get_queryset().order_by('id')
     serializer_class = EcsSerializer
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-    filter_fields = ('id', 'hostname', 'type', 'instance_id')
+    filter_fields = ('id', 'hostname','type','instance_id')
     search_fields = ('id', 'hostname',)
     permission_classes = (permissions.DjangoModelPermissions,)  # 继承 django的权限
 
@@ -156,3 +156,4 @@ class ApiEcsDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ecs.objects.get_queryset().order_by('id')
     serializer_class = EcsSerializer
     permission_classes = (permissions.DjangoModelPermissions,)
+

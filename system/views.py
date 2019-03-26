@@ -1,5 +1,6 @@
 import logging
-from django.shortcuts import render
+import json
+from django.shortcuts import render, HttpResponse
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from system.models import Users
@@ -15,8 +16,22 @@ from django.contrib.auth import logout
 logger = logging.getLogger('system')
 
 
-class CustomBackend(ModelBackend):
+class GetInfo(View):
+    """
+    为了 配合 seal-vue 项目 临时使用
+    """
+    def get(self, request):
+        admin = {
+            'name': 'super_admin',
+            'user_id': '1',
+            'access': ['super_admin', 'admin'],
+            'token': 'super_admin',
+            'avator': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
+        }
+        return HttpResponse(json.dumps(admin))
 
+
+class CustomBackend(ModelBackend):
     """
     用户名字/邮箱名字 登录
     :param request:
@@ -61,7 +76,6 @@ def login_view(request):
             return render(request, 'system/login.html', {'error_msg': error_msg, })
 
 
-
 @login_required(login_url="/system/login")
 def index(request):
     """
@@ -70,8 +84,6 @@ def index(request):
     :return:
     """
     return render(request, 'system/index.html')
-
-
 
 
 class UserPasswordUpdateView(LoginRequiredMixin, UpdateView):
