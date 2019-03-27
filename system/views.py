@@ -12,24 +12,43 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, View, DetailView, CreateView, UpdateView
 from django.contrib.auth import logout
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.authtoken.models import Token
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 logger = logging.getLogger('system')
 
 
-class GetInfo(View):
+class UserInfo(APIView):
     """
-    为了 配合 seal-vue 项目 临时使用
+    获取用户信息
     """
-    def get(self, request):
-        admin = {
-            'name': 'super_admin',
-            'user_id': '1',
-            'access': ['super_admin', 'admin'],
-            'token': 'super_admin',
+    def post(self, request):
+        token = (json.loads(request.body))['token']
+        obj = Token.objects.get(key=token).user
+        result = {
+            'name': obj.username,
+            'user_id': obj.id,
+            'access': ['super_admin', 'admin'] if obj.is_superuser else [],
+            'token': token,
             'avator': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
         }
-        return HttpResponse(json.dumps(admin))
+        return HttpResponse(json.dumps(result))
 
+
+class UserLogin(APIView):
+    """
+
+    """
+    def post(self, request):
+        token = (json.loads(request.body))['token']
+        obj = Token.objects.get(key=token)
+        obj.delete()
+        result = {
+           "status": True
+        }
+        return HttpResponse(json.dumps(result))
 
 class CustomBackend(ModelBackend):
     """
