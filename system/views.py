@@ -16,6 +16,8 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import permissions
+from rest_framework import generics
 
 logger = logging.getLogger('system')
 
@@ -24,6 +26,8 @@ class UserInfo(APIView):
     """
     获取用户信息
     """
+    permission_classes = (permissions.IsAuthenticated,)
+
     def post(self, request):
         token = (json.loads(request.body))['token']
         obj = Token.objects.get(key=token).user
@@ -37,10 +41,9 @@ class UserInfo(APIView):
         return HttpResponse(json.dumps(result))
 
 
-class UserLogin(APIView):
-    """
+class UserLogout(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
 
-    """
     def post(self, request):
         token = (json.loads(request.body))['token']
         obj = Token.objects.get(key=token)
@@ -49,6 +52,7 @@ class UserLogin(APIView):
            "status": True
         }
         return HttpResponse(json.dumps(result))
+
 
 class CustomBackend(ModelBackend):
     """
