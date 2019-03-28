@@ -78,7 +78,6 @@ class EcsListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
 
         context = {
             "ecs_list": ecs_list,
-            'ecs_count': self.queryset.count() if self.queryset != '' else 0,
             "filter_dict": self.filter_dict  # 把查询条件返回给前端
         }
 

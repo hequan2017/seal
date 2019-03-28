@@ -5,7 +5,7 @@
 <link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
-<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+<link href="http://fonts.lug.ustc.edu.cn/css?family=Inconsolata" rel="stylesheet" type="text/css">
 <script src="../../lib/codemirror.js"></script>
 <script src="vb.js"></script>
 <script type="text/javascript" src="../../addon/runmode/runmode.js"></script>
@@ -44,7 +44,7 @@ function test(golden, text) {
     }
     i++;
   }
-  CodeMirror.runMode(text, "text/x-vb",callback); 
+  CodeMirror.runMode(text, "text/x-vb",callback);
 
   if (ok) return "Tests OK";
 }
@@ -88,7 +88,7 @@ function init() {
 function runTest() {
 	document.getElementById('testresult').innerHTML = testAll();
   initText(editor);
-	
+
 }
 document.body.onload = init;
 </script>

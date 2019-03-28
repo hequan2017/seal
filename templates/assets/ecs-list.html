@@ -178,7 +178,7 @@
                                         {% for page in ecs_list.pages %}
                                             {% if page %}
                                                 {% ifequal page ecs_list.number %}
-                                                    <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                                                    <li class="active"  ><a style="background-color: #E0E0E0" href="?{{ page.querystring }}">{{ page }}</a>
                                                     </li>
                                                 {% else %}
                                                     <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
@@ -200,7 +200,7 @@
                                                 style="color: #0a0a0a">总: &nbsp;{{ ecs_list.paginator.num_pages }} 页</span>
                                         </li>
                                         <li><span
-                                                style="color: #0a0a0a"> 数量: {{ ecs_count }}</span>
+                                                style="color: #0a0a0a"> 数量: {{ ecs_list.paginator.count  }}</span>
                                         </li>
                                     </nav>
                                 </div>
