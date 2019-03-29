@@ -34,7 +34,7 @@ class UserInfo(APIView):
         result = {
             'name': obj.username,
             'user_id': obj.id,
-            'access': ['super_admin', 'admin'] if obj.is_superuser else [],
+            'access': list(obj.get_all_permissions()),
             'token': token,
             'avator': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
         }
