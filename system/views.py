@@ -36,7 +36,7 @@ class UserInfo(APIView):
             'user_id': obj.id,
             'access': list(obj.get_all_permissions()),
             'token': token,
-            'avator': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
+            'avatar': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
         }
         return HttpResponse(json.dumps(result))
 
