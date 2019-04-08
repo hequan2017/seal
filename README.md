@@ -8,7 +8,7 @@
 
 > 因本项目开始时间为3月1日,是 国际海豹日,故项目起名为  海豹 seal 
 
-> 主要为 django 基础开发平台, MVC 模式 开发.支持 非前后端分离 和 前后端分离模式 。 可以拿来直接开发 django项目。 
+> 主要为 django 基础开发平台, MVC 模式 开发.支持 非前后端分离 和 前后端分离模式,可以拿来参考 开发 django项目 
 
 >  vue 前端地址 https://github.com/hequan2017/seal-vue 持续开发中
 
@@ -18,10 +18,9 @@
 ## 介绍
 * 基于bootstrap4+django2.1+python3.6+celery4 异步任务
 * 前端模板 inspinia 2.9 
-* 会尽量多加一些注释
-* 采用cbv开发方式，提高开发效率
-* 增加 drf  api 例子
-* 前端 vue版本
+* 采用cbv开发方式
+* drf api 例子
+* 前端 Vue版本
 
 
 ## DEMO
@@ -55,7 +54,7 @@ python manage.py  runserver 0.0.0.0:80
 
 ```
 
-
+## 其他
 * 扩展功能-异步1   推荐 定时任务用celery
 ```bash
 #需要安装redis
@@ -90,12 +89,10 @@ for i in Users.objects.all():
 
 ### 售后服务
 
-* 有问题 可以加QQ群： 620176501  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bbe5716e8bd2075cb27029bd5dd97e22fc4d83c0f61291f47ed3ed6a4195b024"><img border="0" src="https://github.com/hequan2017/cmdb/blob/master/static/img/group.png"  alt="django开发讨论群" title="django开发讨论群"></a>
-* 欢迎提出你的需求和意见,或者来加入到本项目中一起开发。
-* inspinia 2.9 model   前端基础模板,可以加群,在群共享里面有。
 * bootstrap4 中文文档  https://code.z01.com/v4/
 * cbv 中文文档  http://ccbv.co.uk/projects/Django/2.1/django.views.generic.edit/
- 
+* 有问题 可以加QQ群： 620176501  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bbe5716e8bd2075cb27029bd5dd97e22fc4d83c0f61291f47ed3ed6a4195b024"><img border="0" src="https://github.com/hequan2017/cmdb/blob/master/static/img/group.png"  alt="django开发讨论群" title="django开发讨论群"></a>
+* 欢迎提出你的需求和意见,或者来加入到本项目中一起开发。
 
 ## 作者
 * 何全 
