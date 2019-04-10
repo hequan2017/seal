@@ -1,5 +1,5 @@
 # 海豹  
-![版本](https://img.shields.io/badge/release-0.2-blue.svg)
+![版本](https://img.shields.io/badge/release-0.3-blue.svg)
 ![语言](https://img.shields.io/badge/language-python3.6-blue.svg)
 ![语言](https://img.shields.io/badge/env-django2.1.7-red.svg)
 ![bootstrap4](https://img.shields.io/badge/model-bootstrap4-mauve.svg)
