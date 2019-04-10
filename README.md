@@ -3,16 +3,16 @@
 ![语言](https://img.shields.io/badge/language-python3.6-blue.svg)
 ![语言](https://img.shields.io/badge/env-django2.1.7-red.svg)
 ![bootstrap4](https://img.shields.io/badge/model-bootstrap4-mauve.svg)
-![RESETful](https://img.shields.io/badge/env-RESETful-red.svg)
-![GraphQL](https://img.shields.io/badge/env-GraphQL-red.svg)
+![RESTful](https://img.shields.io/badge/api-RESTful-blue.svg)
+![GraphQL](https://img.shields.io/badge/api-GraphQL-blue.svg)
 
-> django-base-templastes
+> django-base-templates
 
 > 因本项目开始时间为3月1日,是 国际海豹日,故项目起名为  海豹 seal 
 
 > 主要为 django 基础开发平台, MVC 模式 开发.支持 非前后端分离 和 前后端分离模式,可以拿来参考 开发 django项目
 
-> 支持 RESETful 和 GraphQL
+> 支持 RESTful 和 GraphQL
 
 >  vue 前端地址 https://github.com/hequan2017/seal-vue 持续开发中
 
@@ -23,7 +23,7 @@
 * 基于bootstrap4+django2.1+python3.6+celery4 异步任务
 * 前端模板 inspinia 2.9 
 * 采用cbv开发方式
-* drf api 例子
+* drf  RESTful  api 例子
 * 前端 Vue版本
 * GraphQL
 
