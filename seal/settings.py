@@ -46,7 +46,12 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'django_filters',
+    'graphene_django',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'seal.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -8,9 +8,10 @@ class Ecs(models.Model):
         ('华为云', '华为云'),
         ('亚马逊', '亚马逊'),
         ('其他', '其他'),
+        (None,None),
     )
     hostname = models.CharField(max_length=96, verbose_name='主机名', blank=True, null=True, )
-    type = models.CharField(choices=TYPE_CHOICES, max_length=16, verbose_name='主机类型')
+    type = models.CharField(choices=TYPE_CHOICES, max_length=16, verbose_name='主机类型', blank=True, null=True, )
     instance_id = models.CharField(max_length=64, verbose_name='实例ID', unique=True)
     instance_name = models.CharField(max_length=96, verbose_name='标签', blank=True, null=True, )
     os_name = models.CharField(max_length=64, verbose_name='系统版本', blank=True, null=True, )
