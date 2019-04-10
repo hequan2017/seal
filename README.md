@@ -59,6 +59,13 @@ query{
   }
 }
 
+query{
+  singleUser(pk: 1){
+    username,
+    email
+  }
+}
+
 mutation createUser {
  createUser (username: "test1") {
      info {
