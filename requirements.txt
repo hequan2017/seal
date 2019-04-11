@@ -9,7 +9,7 @@ chardet==3.0.4
 coreapi==2.3.3
 coreschema==0.0.4
 decorator==4.3.0
-Django==2.2rc1
+Django==2.2.0
 django-bootstrap4==0.0.7
 django-celery-beat==1.4.0
 django-celery-results==1.0.4
