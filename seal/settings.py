@@ -234,7 +234,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer' #注释掉 可以关闭  api web界面
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        # 'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',

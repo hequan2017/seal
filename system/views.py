@@ -34,7 +34,8 @@ class UserInfo(APIView):
         result = {
             'name': obj.username,
             'user_id': obj.id,
-            'access': list(obj.get_all_permissions())+['admin'] if obj.is_superuser else list(obj.get_all_permissions()),
+            'access': list(obj.get_all_permissions()) + ['admin'] if obj.is_superuser else list(
+                obj.get_all_permissions()),
             'token': token,
             'avatar': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
         }
@@ -49,8 +50,60 @@ class UserLogout(APIView):
         obj = Token.objects.get(key=token)
         obj.delete()
         result = {
-           "status": True
+            "status": True
         }
+        return HttpResponse(json.dumps(result))
+
+
+class MockMenu(APIView):
+
+    def post(self, request):
+        result = [
+
+            {
+                "path": '/assets',
+                "name": 'assets',
+                "meta": {
+                    "icon": 'md-menu',
+                    "title": '资产管理'
+                },
+                "component": 'Main',
+                "children": [
+                    {
+                        'path': 'ecs',
+                        'name': 'ecs',
+                        'meta': {
+                            'access': ['assets.view_ecs'],
+                            'icon': 'md-funnel',
+                            'title': 'ecs'
+                        },
+                        'component': 'assets/ecs/ecs-list'
+                    }
+                ]
+            },
+            {
+                "path": '/multilevel',
+                "name": 'multilevel',
+                "meta": {
+                    "icon": 'md-menu',
+                    "title": '多级菜单'
+                },
+                "component": 'Main',
+                "children": [
+                    {
+                        "path": '/level_2_1',
+                        "name": 'level_2_1',
+                        "meta": {
+                            "icon": 'md-funnel',
+                            "title": '二级-1'
+                        },
+                        "component": 'multilevel/level-2-1'
+                    },
+
+                ]
+            }
+        ]
+        print(result)
         return HttpResponse(json.dumps(result))
 
 
