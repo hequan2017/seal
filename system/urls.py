@@ -1,5 +1,5 @@
 from django.urls import path
-from system.views import login_view, UserPasswordUpdateView, logout_view, UserInfo, UserLogout,MockMenu
+from system.views import login_view, UserPasswordUpdateView, logout_view, UserInfo, UserLogout,Menu
 
 app_name = "system"
 
@@ -11,5 +11,5 @@ urlpatterns = [
 
     path('api/user_info', UserInfo.as_view()),
     path('api/logout', UserLogout.as_view()),
-    path('mock_menu',MockMenu.as_view())
+    path('menu',Menu.as_view())
 ]

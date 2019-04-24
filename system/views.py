@@ -55,7 +55,7 @@ class UserLogout(APIView):
         return HttpResponse(json.dumps(result))
 
 
-class MockMenu(APIView):
+class Menu(APIView):
 
     def post(self, request):
         result = [
