@@ -98,7 +98,7 @@ if socket.gethostname().endswith('test'):
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '192.168.100.50',
-            'PORT': '3306',
+            'PORT': '4000',
             'NAME': 'seal',
             'USER': 'root',
             'PASSWORD': '123456',
