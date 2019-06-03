@@ -34,6 +34,9 @@
 
 > 账户 admin    密码 1qaz.2wsx
 
+> api文档地址 : http://129.28.156.219:8001/api/docs/
+
+
 ![列表](document/demo/1.jpg)
 ![添加](document/demo/2.jpg)
 ![API](document/demo/3.jpg)
