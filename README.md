@@ -14,7 +14,7 @@
 
 > 支持 RESTful 和 GraphQL
 
->  vue 前端地址 https://github.com/hequan2017/seal-vue 持续开发中
+>  vue 前端地址 <https://github.com/hequan2017/seal-vue> 持续开发中
 
 > 作者会在周末进行开发、更新。
 
@@ -47,7 +47,7 @@
 ## GraphQL
 > 具体代码 请参考  seal/schema.py
 
-> 请求地址 :  http://localhost/graphql
+> 请求地址 :  <http://localhost/graphql>
 
 > GraphQL 请求参数
 ```
@@ -99,13 +99,16 @@ yum install  python-devel mysql-devel  -y
 
 git clone https://github.com/hequan2017/seal
 cd seal
-python install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
 
 
-python manage.py  runserver 0.0.0.0:80
+
+python36  -m  pip  install -r requirements.txt
+python36 manage.py makemigrations
+python36 manage.py migrate
+python36 manage.py createsuperuser
+
+
+python36  manage.py  runserver 0.0.0.0:80
 
 ```
 
@@ -144,9 +147,9 @@ for i in Users.objects.all():
 
 ## 售后服务
 
-* bootstrap4 中文文档  https://code.z01.com/v4/
-* cbv 中文文档  http://ccbv.co.uk/projects/Django/2.1/django.views.generic.edit/
-* GraphQL   中文参考文档  https://passwo.gitbook.io/graphql/index/drf
+* bootstrap4 中文文档  <https://code.z01.com/v4/>
+* cbv 中文文档  <http://ccbv.co.uk/projects/Django/2.1/django.views.generic.edit/>
+* GraphQL   中文参考文档  <https://passwo.gitbook.io/graphql/index/drf>
 
 ### 其他
 * 有问题 可以加QQ群： 620176501  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bbe5716e8bd2075cb27029bd5dd97e22fc4d83c0f61291f47ed3ed6a4195b024"><img border="0" src="https://github.com/hequan2017/cmdb/blob/master/static/img/group.png"  alt="django开发讨论群" title="django开发讨论群"></a>
