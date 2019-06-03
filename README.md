@@ -18,9 +18,9 @@
 
 > 作者会在周末进行开发、更新。
 
-
+ 
 ## 介绍
-* 基于bootstrap4+django2.1+python3.6+celery4 异步任务
+* 基于bootstrap4+django2.2 + python3.6+celery4 异步任务
 * 前端模板 inspinia 2.9 
 * 采用cbv开发方式
 * drf  RESTful  api 例子
@@ -114,6 +114,10 @@ python36 manage.py createsuperuser
 
 
 python36  manage.py  runserver 0.0.0.0:8001
+
+//
+nohup  python36  manage.py  runserver 0.0.0.0:8001  >>  /tmp/http.log   2>&1  & 
+
 
 ```
 
