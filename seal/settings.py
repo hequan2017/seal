@@ -93,12 +93,12 @@ AUTHENTICATION_BACKENDS = ('system.views.CustomBackend',)  ## 重新登录验证
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 
-if socket.gethostname().endswith('test'):
+if socket.gethostname().endswith('demo'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '192.168.100.50',
-            'PORT': '4000',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
             'NAME': 'seal',
             'USER': 'root',
             'PASSWORD': '123456',

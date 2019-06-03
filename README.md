@@ -1,7 +1,7 @@
 # 海豹  
 ![版本](https://img.shields.io/badge/release-0.3-blue.svg)
 ![语言](https://img.shields.io/badge/language-python3.6-blue.svg)
-![语言](https://img.shields.io/badge/env-django2.1.7-red.svg)
+![语言](https://img.shields.io/badge/env-django2.2-red.svg)
 ![bootstrap4](https://img.shields.io/badge/model-bootstrap4-mauve.svg)
 ![RESTful](https://img.shields.io/badge/api-RESTful-blue.svg)
 ![GraphQL](https://img.shields.io/badge/api-GraphQL-blue.svg)
@@ -29,6 +29,11 @@
 
 
 ## DEMO
+
+> http://129.28.156.219:8001
+
+> 账户 admin    密码 1qaz.2wsx
+
 ![列表](document/demo/1.jpg)
 ![添加](document/demo/2.jpg)
 ![API](document/demo/3.jpg)
@@ -95,7 +100,7 @@ mutation deleteUser {
 ## 部署
 
 ```bash
-yum install  python-devel mysql-devel  -y
+yum install  python-devel mysql-devel  python36-devel.x86_64  -y
 
 git clone https://github.com/hequan2017/seal
 cd seal
@@ -108,7 +113,7 @@ python36 manage.py migrate
 python36 manage.py createsuperuser
 
 
-python36  manage.py  runserver 0.0.0.0:80
+python36  manage.py  runserver 0.0.0.0:8001
 
 ```
 
