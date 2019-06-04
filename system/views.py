@@ -73,7 +73,7 @@ class Menu(APIView):
                         'path': 'ecs',
                         'name': 'ecs',
                         'meta': {
-                            'access': ['assets.view_ecs'],
+                            'access': ['assets.add_ecs'],
                             'icon': 'md-funnel',
                             'title': 'ecs'
                         },
