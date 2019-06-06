@@ -101,6 +101,7 @@ mutation deleteUser {
 
 
 ## 部署
+* mysql 5.7 / sqlite
 
 ```bash
 yum install  python-devel mysql-devel  python36-devel.x86_64  -y
@@ -108,7 +109,7 @@ yum install  python-devel mysql-devel  python36-devel.x86_64  -y
 git clone https://github.com/hequan2017/seal
 cd seal
 
-## django 2.2 不支持 低版本的 sqlite,如果想使用sqlite ，请根据这个博客 https://www.jianshu.com/p/cdacf4b74646 进行升级
+## django 2.2 不支持 低版本的 sqlite,如果想使用sqlite  存储数据 ，请根据这个博客 https://www.jianshu.com/p/cdacf4b74646 进行升级
 
 python36  -m  pip  install -r requirements.txt
 python36 manage.py makemigrations
@@ -125,10 +126,12 @@ nohup  python36  manage.py  runserver 0.0.0.0:8001  >>  /tmp/http.log   2>&1  &
 ```
 
 ## 异步任务
+* redis
+
 * 扩展功能-异步1   推荐 定时任务用celery
+
 ```bash
-#需要安装redis
-#启动celery异步任务
+
 cd seal
 celery  -B   -A  seal  worker  -l  info
 ```
