@@ -108,7 +108,7 @@ yum install  python-devel mysql-devel  python36-devel.x86_64  -y
 git clone https://github.com/hequan2017/seal
 cd seal
 
-
+## django 2.2 不支持 低版本的 sqlite,如果想使用sqlite ，请根据这个博客 https://www.jianshu.com/p/cdacf4b74646 进行升级
 
 python36  -m  pip  install -r requirements.txt
 python36 manage.py makemigrations

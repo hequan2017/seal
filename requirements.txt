@@ -9,7 +9,7 @@ chardet==3.0.4
 coreapi==2.3.3
 coreschema==0.0.4
 decorator==4.3.0
-Django==2.2.0
+Django==2.2.2
 django-bootstrap4==0.0.7
 django-celery-beat==1.4.0
 django-celery-results==1.0.4
@@ -65,4 +65,3 @@ vine==1.2.0
 watchdog==0.8.3
 watchdog-gevent==0.1.0
 wcwidth==0.1.7
-django-simpleui
