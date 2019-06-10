@@ -53,7 +53,7 @@
                     </div>
                     <div class="ibox-content">
 
-              
+
 
                         <div class="table-responsive">
 
@@ -88,7 +88,8 @@
                                                 <div class="">{{ v.namespace}}</div>
                                             </td>
                                             <td class="center">
-
+                                                 <a class="btn btn-success  btn-xs "
+                                                       href="{% url  "k8s:k8s-pod-webssh" %}?namespace={{ v.namespace }}&name={{ k }}">webssh</a>
                                             </td>
 
 {#                                          {% if perms.assets.view_ecs %}#}
