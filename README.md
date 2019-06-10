@@ -50,6 +50,8 @@
 ![API](document/demo/3.jpg)
 ![API](document/demo/4.jpg)
 ![API](document/demo/5.jpg)
+![K8S](document/demo/6.jpg)
+![K8S](document/demo/7.jpg)
 
 
 ## templates
