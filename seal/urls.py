@@ -15,6 +15,7 @@ urlpatterns = [
     path('index', index, name="index"),
     path('system/', include('system.urls', namespace='system')),
     path('assets/', include('assets.urls', namespace='assets')),
+    path('k8s/', include('k8s.urls', namespace='k8s')),
     path('admin/', admin.site.urls, ),
     path('api/token', views.obtain_auth_token),
     path('api/docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION, authentication_classes=[],

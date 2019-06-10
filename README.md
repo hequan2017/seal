@@ -26,11 +26,13 @@
 * drf  RESTful  api 例子
 * 前端 Vue版本
 * GraphQL
+* k8s管理
 
 ## 开发计划
 
 *  一期: 基础模板 (已完成)
 *  二期: k8s管理平台 (开发中)
+    * pod 列表  (已完成)  
 
 
 ## DEMO
@@ -129,6 +131,11 @@ nohup  python36  manage.py  runserver 0.0.0.0:8001  >>  /tmp/http.log   2>&1  &
 
 
 ```
+
+## k8s模块
+
+> 修改settings    Token 及 APISERVER。
+
 
 ## 异步任务
 * redis

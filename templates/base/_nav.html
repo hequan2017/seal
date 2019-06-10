@@ -53,6 +53,19 @@
                         </li>
                     {% endif %}
                 </ul>
+
+            </li>
+            <li class="k8s">
+                <a href="#"> <i class="fa fa-gitlab"></i> <span class="nav-label">k8s管理</span></a>
+
+
+                <ul class="nav nav-second-level">
+                    {% if perms.k8s.view_ecs %}
+                        <li class="k8s-pod-list">
+                            <a href="{% url "k8s:k8s-pod-list" %}">Pod列表</a>
+                        </li>
+                    {% endif %}
+                </ul>
             </li>
 
 
