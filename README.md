@@ -14,9 +14,11 @@
 
 > 支持 RESTful 和 GraphQL
 
->  vue 前端地址 <https://github.com/hequan2017/seal-vue> 持续开发中
+> vue 前端地址 <https://github.com/hequan2017/seal-vue> 持续开发中
 
 > 作者会在周末进行开发、更新。
+
+> 支持 k8s webssh 管理pod
 
  
 ## 介绍
