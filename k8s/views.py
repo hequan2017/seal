@@ -24,7 +24,6 @@ class K8sNodeListView(LoginRequiredMixin, PermissionRequiredMixin, View):
         ret = obj.get_node_list()
         data = {}
         for i in ret.items:
-            print(i)
             data[i.metadata.name] = {"name": i.metadata.name,
                                      "status": i.status.conditions[-1].type if i.status.conditions[ -1].status == "True" else "NotReady",
                                      "ip": i.status.addresses[0].address,
