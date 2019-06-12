@@ -1,0 +1,75 @@
+{% extends "base/base.html" %}
+{% block  title %}资产详情{% endblock %}
+{% block header-css %}
+    {% load bootstrap4 %}
+{% endblock %}
+
+
+{% block  page-content %}
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="panel-options">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a class="text-center"><i class="fa fa-laptop"></i>{{ name }}</a>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="col-sm-12" style="padding-left: 0">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span class="label"><b>{{ name }}</b></span>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+
+                                        <a class="close-link">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+
+                                    <pre>{{ data }}
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {% block footer-js %}
+        <script>
+            window.onload = function () {   // 固定左边导航栏
+                $(".k8s").addClass("active");
+                $(".k8s-pod-list").addClass("active");
+            };
+
+        </script>
+
+
+    {% endblock %}
+
+
+{% endblock %}
+
+

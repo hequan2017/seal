@@ -20,35 +20,50 @@ class K8sApi(object):
         v1 = client.CoreV1Api(aApiClient)
         return v1
 
-    def get_podlist(self):
+    def get_node_list(self):
+        client_v1 = self.get_client()
+        ret = client_v1.list_node()
+        return ret
+
+    def get_service_list(self):
+        client_v1 = self.get_client()
+        ret = client_v1.list_service_for_all_namespaces(watch=False)
+        return ret
+
+    def get_pod_list(self):
         client_v1 = self.get_client()
         ret_pod = client_v1.list_pod_for_all_namespaces(watch=False)
         return ret_pod
 
-    def get_namespacelist(self):
+    def get_pod_detail(self, name, namespace):
+        client_v1 = self.get_client()
+        ret_pod = client_v1.read_namespaced_pod(name, namespace)
+        return ret_pod
+
+    def get_namespace_list(self):
         client_v1 = self.get_client()
         ret_namespace = client_v1.list_namespace()
         return ret_namespace
 
-    def test_pods_connect(self, podname, namespace, command, container=None):
-        client_v1 = self.get_client()
-        if stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
-                  container=container,
-                  stderr=True, stdin=False,
-                  stdout=True, tty=False):
-            return True
-        else:
-            return False
-
-    def get_pods_exec(self, podname, namespace, command, container=None):
-        client_v1 = self.get_client()
-        if container:
-            rest = stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
-                          container=container,
-                          stderr=True, stdin=False,
-                          stdout=True, tty=False)
-        else:
-            rest = stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
-                          stderr=True, stdin=False,
-                          stdout=True, tty=False)
-        return rest
+    # def test_pod_connect(self, podname, namespace, command, container=None):
+    #     client_v1 = self.get_client()
+    #     if stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
+    #               container=container,
+    #               stderr=True, stdin=False,
+    #               stdout=True, tty=False):
+    #         return True
+    #     else:
+    #         return False
+    #
+    # def get_pod_exec(self, podname, namespace, command, container=None):
+    #     client_v1 = self.get_client()
+    #     if container:
+    #         rest = stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
+    #                       container=container,
+    #                       stderr=True, stdin=False,
+    #                       stdout=True, tty=False)
+    #     else:
+    #         rest = stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
+    #                       stderr=True, stdin=False,
+    #                       stdout=True, tty=False)
+    #     return rest

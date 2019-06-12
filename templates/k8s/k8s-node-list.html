@@ -41,7 +41,7 @@
                 <div class="ibox float-e-margins">
 
                     <div class="ibox-title">
-                        <h5>Pod列表</h5>
+                        <h5>Node列表</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -66,11 +66,16 @@
                                     <tr>
 
 
-                                        <th>主机名</th>
-                                        <th>ip</th>
-                                        <th>命名空间</th>
-                                          <th>详情</th>
-                                        <th>操作</th>
+                                        <th>服务名</th>
+                                        <th>状态</th>
+                                        <th>IP</th>
+                                        <th>版本</th>
+                                        <th>镜像</th>
+                                        <th>IP</th>
+                                        <th>IP</th>
+
+
+
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -83,20 +88,28 @@
                                                 <div class="">{{ k }}</div>
                                             </td>
                                             <td class="center">
-                                                <div class="">{{ v.ip }}</div>
+                                                {% if v.status == "Ready" %}
+                                                <div class="btn btn-success  btn-xs"> {{ v.status }}</div>
+                                                {% else %}
+                                                    <div class="btn btn-danger  btn-xs"> {{ v.status }}</div>
+                                                {% endif %}
                                             </td>
                                             <td class="center">
-                                                <div class="">{{ v.namespace}}</div>
+                                                <div class="">{{ v.ip}}</div>
                                             </td>
-                                                                                        <td class="center">
-                                                 <a class="btn btn-warning  btn-xs "  target="_blank"
-                                                       href="{% url  "k8s:k8s-pod-detail" %}?namespace={{ v.namespace }}&name={{ k }}">详情</a>
+                                            <td class="center">
+                                                <div class="">{{ v.kubelet_version}}</div>
+                                            </td>
+                                            <td class="center">
+                                                <div class="">{{ v.os_image}}</div>
+                                            </td>
+                                            <td class="center">
+                                                <div class="">{{ v.ip}}</div>
+                                            </td>
+                                            <td class="center">
+                                                <div class="">{{ v.ip}}</div>
                                             </td>
 
-                                            <td class="center">
-                                                 <a class="btn btn-success  btn-xs "  target="_blank"
-                                                       href="{% url  "k8s:k8s-pod-webssh" %}?namespace={{ v.namespace }}&name={{ k }}">webssh</a>
-                                            </td>
 
                                         </tr>
                                     {% endfor %}
@@ -126,7 +139,7 @@
         <script>
             window.onload = function () {   // 固定左边导航栏
                 $(".k8s").addClass("active");
-                $(".k8s-pod-list").addClass("active");
+                $(".k8s-node-list").addClass("active");
             };
 
         </script>

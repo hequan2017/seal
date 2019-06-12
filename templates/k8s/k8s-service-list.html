@@ -41,7 +41,7 @@
                 <div class="ibox float-e-margins">
 
                     <div class="ibox-title">
-                        <h5>Pod列表</h5>
+                        <h5>Service列表</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -66,11 +66,15 @@
                                     <tr>
 
 
-                                        <th>主机名</th>
-                                        <th>ip</th>
-                                        <th>命名空间</th>
-                                          <th>详情</th>
-                                        <th>操作</th>
+                                        <th>服务名</th>
+                                        <th>cluster_ip</th>
+                                        <th>类型</th>
+                                         <th>external_i_ps</th>
+
+                                         <th>target_port/port/node_port</th>
+
+
+
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -83,19 +87,16 @@
                                                 <div class="">{{ k }}</div>
                                             </td>
                                             <td class="center">
-                                                <div class="">{{ v.ip }}</div>
+                                                <div class="">{{ v.cluster_ip }}</div>
                                             </td>
                                             <td class="center">
-                                                <div class="">{{ v.namespace}}</div>
+                                                <div class="">{{ v.type}}</div>
                                             </td>
-                                                                                        <td class="center">
-                                                 <a class="btn btn-warning  btn-xs "  target="_blank"
-                                                       href="{% url  "k8s:k8s-pod-detail" %}?namespace={{ v.namespace }}&name={{ k }}">详情</a>
-                                            </td>
-
                                             <td class="center">
-                                                 <a class="btn btn-success  btn-xs "  target="_blank"
-                                                       href="{% url  "k8s:k8s-pod-webssh" %}?namespace={{ v.namespace }}&name={{ k }}">webssh</a>
+                                                <div class="">{{ v.external_i_ps}}</div>
+                                            </td>
+                                            <td class="center">
+                                                <div class="">{% for i in v.port %}{{ i }} <br />{% endfor %}</div>
                                             </td>
 
                                         </tr>
@@ -126,7 +127,7 @@
         <script>
             window.onload = function () {   // 固定左边导航栏
                 $(".k8s").addClass("active");
-                $(".k8s-pod-list").addClass("active");
+                $(".k8s-service-list").addClass("active");
             };
 
         </script>

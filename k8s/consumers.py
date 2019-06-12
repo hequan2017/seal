@@ -28,7 +28,7 @@ class MyThread(threading.Thread):
                     self.number += 1
 
                 if "kubectl exec -it" in str_data:
-                    #不返回内容
+                    # 不返回内容
                     pass
                 else:
                     if "rpc error" in str_data:
@@ -68,6 +68,7 @@ class EchoConsumer(WebsocketConsumer):
 
     def connect(self):
         # 创建channels group， 命名为：用户名 (最好不要中文名字)，并使用channel_layer写入到redis
+
         async_to_sync(self.channel_layer.group_add)(self.scope['user'].username, self.channel_name)
 
         self.sshclient = paramiko.SSHClient()
@@ -80,6 +81,7 @@ class EchoConsumer(WebsocketConsumer):
         t1 = MyThread(self)
         t1.setDaemon(True)
         t1.start()
+        # 可以在这里根据 用户  要访问的pod 进行 权限控制
         path = self.scope['path'].split('/')
         cmd = f"kubectl exec -it {path[2]}  -n  {path[3]}  sh  \r"
         self.chan.send(cmd)

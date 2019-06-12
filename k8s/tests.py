@@ -12,9 +12,12 @@ def main():
     client.Configuration.set_default(configuration)
     v1 = client.CoreV1Api()
     ret = v1.list_pod_for_all_namespaces(watch=False)
-    for i in ret.items:
-        print("%s\t%s\t%s" %
-              (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
+
+    ret1  = v1.read_namespaced_pod("nginx-58bdcbcd-z8v2s","default")
+    print(ret1)
+    # for i in ret.items:
+    #     print("%s\t%s\t%s" %
+    #           (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
 
 
 if __name__ == '__main__':
