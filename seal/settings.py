@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'system.apps.SystemConfig',
     'assets.apps.AssetsConfig',
+    'k8s.apps.K8sConfig',
+    'sqlaudit.apps.SqlauditConfig',
     'bootstrap4',
     'django_celery_results',
     'django_celery_beat',
