@@ -116,6 +116,7 @@ mutation deleteUser {
 
 ## 部署
 * mysql 5.7 / sqlite
+* redis
 
 ```bash
 yum install  python-devel mysql-devel  python36-devel.x86_64  -y
@@ -158,7 +159,7 @@ webssh_name = "root@k8s-master"  # 终端显示的名字  是为了判断终端�
 
 
 ## 异步任务
-* redis
+
 
 * 扩展功能-异步1   推荐 定时任务用celery
 
