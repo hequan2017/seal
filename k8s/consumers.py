@@ -18,10 +18,8 @@ class K8SStreamThread(threading.Thread):
         self.stream = container_stream
 
     def run(self):
-        # while not self.ws.exit_status_ready():
         while self.stream.is_open():
             time.sleep(0.1)
-
             if not self.stream.is_open():
                 self.ws.close()
             try:
