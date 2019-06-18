@@ -1,99 +1,61 @@
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
 
-import paramiko
 import threading
 import time
-from seal import settings
 
 from channels.layers import get_channel_layer
+from k8s.k8sApi.core import K8sApi
 
 channel_layer = get_channel_layer()
 
 
-class MyThread(threading.Thread):
-    def __init__(self, chan):
+class K8SStreamThread(threading.Thread):
+
+    def __init__(self, ws, container_stream):
         threading.Thread.__init__(self)
-        self.chan = chan
-        self.number = 0
+        self.ws = ws
+        self.stream = container_stream
 
     def run(self):
-
-        while not self.chan.chan.exit_status_ready():
+        # while not self.ws.exit_status_ready():
+        while self.stream.is_open():
             time.sleep(0.1)
+
+            if not self.stream.is_open():
+                self.ws.close()
             try:
-                data = self.chan.chan.recv(1024)
-                str_data = data.decode(encoding='utf-8')
-                if getattr(settings, 'webssh_name') in data.decode(encoding='utf-8'):
-                    self.number += 1
-
-                if "kubectl exec -it" in str_data:
-                    # 不返回内容
-                    pass
-                else:
-                    if "rpc error" in str_data:
-                        async_to_sync(self.chan.channel_layer.group_send)(
-                            self.chan.scope['user'].username,
-                            {
-                                "type": "user.message",
-                                "text": "连接错误,已断开连接! 此 pod  不支持sh 或者其他未知错误!\r"
-                            },
-                        )
-                        self.chan.sshclient.close()
-                    elif self.number > 1:
-                        async_to_sync(self.chan.channel_layer.group_send)(
-                            self.chan.scope['user'].username,
-                            {
-                                "type": "user.message",
-                                "text": "程序退出,已断开连接!\r"
-                            },
-                        )
-                        self.chan.sshclient.close()
-                    else:
-                        async_to_sync(self.chan.channel_layer.group_send)(
-                            self.chan.scope['user'].username,
-                            {
-                                "type": "user.message",
-                                "text": bytes.decode(data)
-                            },
-                        )
-
-            except Exception as ex:
-                pass
-        self.chan.sshclient.close()
-        return False
+                if self.stream.peek_stdout():
+                    stdout = self.stream.read_stdout()
+                    self.ws.send(stdout)
+                if self.stream.peek_stderr():
+                    stderr = self.stream.read_stderr()
+                    self.ws.send(stderr)
+            except Exception as err:
+                self.ws.close()
 
 
 class EchoConsumer(WebsocketConsumer):
 
     def connect(self):
-        # 创建channels group， 命名为：用户名 (最好不要中文名字)，并使用channel_layer写入到redis
-
+        # 创建channels group， 命名为：用户名 (最好不要中文名字,这里会用名字 建立一个通道，通过这个通道进行通信)，并使用channel_layer写入到redis
         async_to_sync(self.channel_layer.group_add)(self.scope['user'].username, self.channel_name)
-
-        self.sshclient = paramiko.SSHClient()
-        self.sshclient.load_system_host_keys()
-        self.sshclient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.sshclient.connect(getattr(settings, 'webssh_ip'), getattr(settings, 'webssh_port'),
-                               getattr(settings, 'webssh_username'), getattr(settings, 'webssh_password'))
-        self.chan = self.sshclient.invoke_shell(term='xterm')
-        self.chan.settimeout(0)
-        t1 = MyThread(self)
-        t1.setDaemon(True)
-        t1.start()
         # 可以在这里根据 用户  要访问的pod 进行 权限控制
         path = self.scope['path'].split('/')
-        cmd = f"kubectl exec -it {path[2]}  -n  {path[3]}  sh  \r"
-        self.chan.send(cmd)
-
+        try:
+            k = K8sApi()
+            self.container_stream = k.terminal_start(namespace=path[3], pod_name=path[2], container="")
+            kub_stream = K8SStreamThread(self, self.container_stream)
+            kub_stream.start()
+        except Exception as err:
+            return
         self.accept()
 
     def receive(self, text_data):
         try:
-            self.chan.send(text_data)
+            self.container_stream.write_stdin(text_data)
         except Exception as ex:
-            pass
-            # print(str(ex))
+            self.container_stream.write_stdin('exit\r')
 
     def user_message(self, event):
         self.send(text_data=event["text"])

@@ -40,30 +40,25 @@ class K8sApi(object):
         ret_pod = client_v1.read_namespaced_pod(name, namespace)
         return ret_pod
 
-    def get_namespace_list(self):
+    def terminal_start(self, namespace, pod_name, container):
+        command = [
+            "/bin/sh",
+            "-c",
+            'TERM=xterm-256color; export TERM; [ -x /bin/bash ] '
+            '&& ([ -x /usr/bin/script ] '
+            '&& /usr/bin/script -q -c "/bin/bash" /dev/null || exec /bin/bash) '
+            '|| exec /bin/sh']
         client_v1 = self.get_client()
-        ret_namespace = client_v1.list_namespace()
-        return ret_namespace
+        container_stream = stream(
+            client_v1.connect_get_namespaced_pod_exec,
+            name=pod_name,
+            namespace=namespace,
+            container=container,
+            command=command,
+            stderr=True, stdin=True,
+            stdout=True, tty=True,
+            _preload_content=False
+        )
 
-    # def test_pod_connect(self, podname, namespace, command, container=None):
-    #     client_v1 = self.get_client()
-    #     if stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
-    #               container=container,
-    #               stderr=True, stdin=False,
-    #               stdout=True, tty=False):
-    #         return True
-    #     else:
-    #         return False
-    #
-    # def get_pod_exec(self, podname, namespace, command, container=None):
-    #     client_v1 = self.get_client()
-    #     if container:
-    #         rest = stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
-    #                       container=container,
-    #                       stderr=True, stdin=False,
-    #                       stdout=True, tty=False)
-    #     else:
-    #         rest = stream(client_v1.connect_get_namespaced_pod_exec, podname, namespace, command=command,
-    #                       stderr=True, stdin=False,
-    #                       stdout=True, tty=False)
-    #     return rest
+        return container_stream
+
