@@ -18,6 +18,7 @@ class K8sApi(object):
         aConfiguration.api_key = {"authorization": "Bearer " + token}
         aApiClient = client.ApiClient(aConfiguration)
         v1 = client.CoreV1Api(aApiClient)
+
         return v1
 
     def get_node_list(self):

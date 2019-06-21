@@ -81,9 +81,30 @@ class Menu(APIView):
                     }
                 ]
             },
+            # {
+            #     "path": '/multilevel',
+            #     "name": 'multilevel',
+            #     "meta": {
+            #         "icon": 'md-menu',
+            #         "title": '多级菜单'
+            #     },
+            #     "component": 'Main',
+            #     "children": [
+            #         {
+            #             "path": '/level_2_1',
+            #             "name": 'level_2_1',
+            #             "meta": {
+            #                 "icon": 'md-funnel',
+            #                 "title": '二级-1'
+            #             },
+            #             "component": 'multilevel/level-2-1'
+            #         },
+            #
+            #     ]
+            # },
             {
-                "path": '/multilevel',
-                "name": 'multilevel',
+                "path": '/k8s',
+                "name": 'k8s',
                 "meta": {
                     "icon": 'md-menu',
                     "title": '多级菜单'
@@ -91,19 +112,28 @@ class Menu(APIView):
                 "component": 'Main',
                 "children": [
                     {
-                        "path": '/level_2_1',
-                        "name": 'level_2_1',
+                        "path": '/pods',
+                        "name": 'pods',
                         "meta": {
                             "icon": 'md-funnel',
-                            "title": '二级-1'
+                            "title": 'pods',
                         },
-                        "component": 'multilevel/level-2-1'
+                        "component": 'k8s/k8s-pods'
                     },
+                    {
+                        "path": '/webssh/:name/:namespace',
+                        "name": 'webssh',
+                        "meta": {
+                            "icon": 'md-funnel',
+                            "title": 'webssh',
+                            "hideInMenu": "true",
+                        },
+                        "component": 'k8s/k8s-webssh'
+                    }
 
                 ]
             }
         ]
-        print(result)
         return HttpResponse(json.dumps(result))
 
 
