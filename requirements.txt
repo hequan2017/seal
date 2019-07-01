@@ -105,3 +105,4 @@ watchdog-gevent==0.1.0
 wcwidth==0.1.7
 websocket-client==0.56.0
 zope.interface==4.6.0
+django-adminlte-ui
