@@ -21,4 +21,6 @@ urlpatterns = [
     path('api/docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION, authentication_classes=[],
                                         permission_classes=[])),
     path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
+
+    path('sql/', include('sql.urls', namespace='sql')),
 ]

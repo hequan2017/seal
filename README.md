@@ -2,7 +2,7 @@
 ![版本](https://img.shields.io/badge/release-0.3-blue.svg)
 ![语言](https://img.shields.io/badge/language-python3.6-blue.svg)
 ![语言](https://img.shields.io/badge/env-django2.2-red.svg)
-![bootstrap4](https://img.shields.io/badge/model-bootstrap4-mauve.svg)
+![bootstrap3](https://img.shields.io/badge/model-bootstrap3-mauve.svg)
 ![RESTful](https://img.shields.io/badge/api-RESTful-blue.svg)
 ![GraphQL](https://img.shields.io/badge/api-GraphQL-blue.svg)
 
@@ -18,17 +18,19 @@
 
 > 作者会在周末进行开发、更新。
 
-> 支持 k8s webssh 管理 pod！
+> 支持 k8s webssh 管理 pod！ sql执行 ！
 
  
 ## 介绍
-* 基于bootstrap4+django2.2 + python3.6+celery4 异步任务
-* 前端模板 inspinia 2.9 
+* 基于bootstrap3+django2.2 + python3.6+celery4 异步任务
+* 前端模板 inspinia 2.7 
 * 采用cbv开发方式
 * drf  RESTful  api 例子
 * 前端 Vue版本
 * GraphQL
-* k8s管理
+* k8s管理  
+* sql执行 引擎  goInception / soar
+
 
 ## 开发计划
 
@@ -36,8 +38,9 @@
 *  二期: k8s管理平台 (开发中)
     * node/service/pod   列表   (已完成)  
     * pod   webssh (已完成， 通过调用 k8s api 进行执行命令)  
-*  三期: mysql sql语句审核(开发中)
-    * 引擎 goInception
+*  三期: mysql sql语句审核(已完成)
+    * sql检测执行
+ 
     
     
 ## DEMO
@@ -56,7 +59,7 @@
 ![API](document/demo/5.jpg)
 ![K8S](document/demo/6.jpg)
 ![K8S](document/demo/7.jpg)
-
+![SQL](document/demo/8.jpg)
 
 ## templates
 
@@ -150,6 +153,19 @@ APISERVER = 'https://192.168.100.111:6443'
 ```
 
 
+## SQL模块
+
+> 进入项目 cd  seal
+
+```
+chmod +x sql/bin/soar
+
+chmod +x sql/bin/goInception
+
+./sql/bin/goInception -config=sql/bin/config/config.toml
+```
+
+
 ## 异步任务
 
 
@@ -187,7 +203,6 @@ for i in Users.objects.all():
 
 ## 售后服务
 
-* bootstrap4 中文文档  <https://code.z01.com/v4/>
 * cbv 中文文档  <http://ccbv.co.uk/projects/Django/2.1/django.views.generic.edit/>
 * GraphQL   中文参考文档  <https://passwo.gitbook.io/graphql/index/drf>
 

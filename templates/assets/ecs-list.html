@@ -1,6 +1,6 @@
 {% extends "base/base.html" %}
 {% load asset_filter %}
-{% load  bootstrap4 %}
+{% load bootstrap3 %}
 {% load  static %}
 {% block header-css %}
 
@@ -86,7 +86,7 @@
                         <div class="table-responsive">
 
 
-                            {#                            <a href="{% url    'asset:ecs_export' %}" class="btn btn-sm btn-primary ">导出</a>#}
+
                             <form class="form-horizontal  "
                                   method="post">
                                 {% csrf_token %}
@@ -162,11 +162,9 @@
 
                                 </table>
 
-                                <div class="m-auto">
+                                             <div style="text-align:center;">
 
                                     <nav class="pagination">
-
-                                        &nbsp;
                                         <li><a href="{% url "assets:ecs-list" %}?page=1">首页 </a></li>
 
                                         {% if ecs_list.has_previous %}
