@@ -157,6 +157,7 @@ APISERVER = 'https://192.168.100.111:6443'
 
 > 进入项目 cd  seal
 
+> sql/bin/config/config.toml 里面可以设置备份服务器，详情可以  github搜索   goInception
 ```
 chmod +x sql/bin/soar
 
