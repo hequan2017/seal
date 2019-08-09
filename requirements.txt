@@ -151,3 +151,4 @@ Werkzeug==0.14.1
 WTForms==2.2.1
 zope.deprecation==4.4.0
 zope.interface==4.6.0
+django-rest-swagger

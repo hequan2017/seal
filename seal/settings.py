@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_filters',
     'graphene_django',
     'channels',
+    'rest_framework_swagger',
 ]
 
 GRAPHENE = {
@@ -267,3 +268,34 @@ CHANNEL_LAYERS = {
 
 # 配置ASGI
 ASGI_APPLICATION = "seal.routing.application"
+
+SWAGGER_SETTINGS = {
+    # 基础样式
+    # 'SECURITY_DEFINITIONS': {
+    #     "basic": {
+    #         'type': 'basic'
+    #     }
+    # },
+    'USE_SESSION_AUTH': True,
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'authorization'
+        }
+    },
+    # 如果需要登录才能够查看接口文档, 登录的链接使用restframework自带的.
+    # 'LOGIN_URL': '/api/v1/login/',
+    # 'LOGOUT_URL': 'rest_framework:logout',
+    # 'DOC_EXPANSION': None,
+    # 'SHOW_REQUEST_HEADERS':True,
+    # 'USE_SESSION_AUTH': True,
+    # 'DOC_EXPANSION': 'list',
+    # 接口文档中方法列表以首字母升序排列
+    'APIS_SORTER': 'alpha',
+    # 如果支持json提交, 则接口文档中包含json输入框
+    'JSON_EDITOR': True,
+    # 方法列表字母排序
+    'OPERATIONS_SORTER': 'alpha',
+    'VALIDATOR_URL': None,
+}
