@@ -147,7 +147,7 @@ watchdog==0.8.3
 watchdog-gevent==0.1.0
 wcwidth==0.1.7
 websocket-client==0.56.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 WTForms==2.2.1
 zope.deprecation==4.4.0
 zope.interface==4.6.0
