@@ -67,6 +67,7 @@ class EchoConsumer(WebsocketConsumer):
     def disconnect(self, close_code):
         try:
             async_to_sync(self.channel_layer.group_discard)(self.scope['user'].username, self.channel_name)
+            self.container_stream.write_stdin('exit\r')  ## 必须加这个，防止 网页关闭，但是 容器没有退出
         except Exception as e:
             # 这里是为了配合 seal-vue 使用，实际项目，请删除下面这一行
             async_to_sync(self.channel_layer.group_discard)("admin", self.channel_name)
