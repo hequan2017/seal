@@ -46,7 +46,7 @@ django-filter==2.1.0
 django-pure-pagination==0.3.0
 django-simpleui==2.1.2.603
 django-timezone-field==3.0
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 docutils==0.14
 dramatiq==1.5.0
 flower==0.9.3
