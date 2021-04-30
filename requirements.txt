@@ -120,7 +120,7 @@ PyYAML==5.1
 redis==3.2.1
 requests==2.21.0
 requests-oauthlib==1.2.0
-rsa==4.0
+rsa==4.7
 Rx==1.6.1
 setproctitle==1.1.10
 simplegeneric==0.8.1
