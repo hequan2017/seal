@@ -35,7 +35,7 @@ daphne==2.3.0
 decorator==4.3.0
 defusedxml==0.6.0
 dill==0.2.9
-Django==2.2.4
+Django==2.2.21
 django-bootstrap3==11.0.0
 django-bootstrap4==0.0.7
 django-celery-beat==1.4.0
