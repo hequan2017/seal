@@ -78,7 +78,7 @@ jsonfield==2.0.2
 kombu==4.4.0
 kubernetes==9.0.0
 lockfile==0.12.2
-lxml==4.3.4
+lxml==4.6.5
 Mako==1.0.12
 Markdown==2.6.11
 MarkupSafe==1.1.1
