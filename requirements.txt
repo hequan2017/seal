@@ -136,7 +136,7 @@ text-unidecode==1.2
 thrift==0.11.0
 tornado==5.1.1
 traitlets==4.3.2
-Twisted==19.2.1
+Twisted==22.4.0
 txaio==18.8.1
 tzlocal==1.5.1
 unicodecsv==0.14.1
