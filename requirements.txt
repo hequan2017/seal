@@ -49,7 +49,7 @@ django-timezone-field==3.0
 djangorestframework==3.9.2
 docutils==0.14
 dramatiq==1.5.0
-flower==0.9.3
+flower==1.2.0
 funcsigs==1.0.0
 future==0.16.0
 gevent==1.4.0
