@@ -79,7 +79,7 @@ kombu==4.4.0
 kubernetes==9.0.0
 lockfile==0.12.2
 lxml==4.3.4
-Mako==1.0.12
+Mako==1.2.2
 Markdown==2.6.11
 MarkupSafe==1.1.1
 msgpack==0.6.1
