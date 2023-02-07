@@ -30,7 +30,7 @@ constantly==15.1.0
 coreapi==2.3.3
 coreschema==0.0.4
 croniter==0.3.30
-cryptography==2.7
+cryptography==39.0.1
 daphne==2.3.0
 decorator==4.3.0
 defusedxml==0.6.0
