@@ -2,14 +2,15 @@ from __future__ import absolute_import, unicode_literals
 import os
 from celery.schedules import crontab
 from datetime import timedelta
-from celery import Celery, platforms
+from celery import Celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'seal.settings')
+# celery 5 移除了 celery.platforms，允许 root 运行改用环境变量
+os.environ.setdefault('C_FORCE_ROOT', 'true')
 
 app = Celery('seal')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
-platforms.C_FORCE_ROOT = True
 
 
 @app.task(bind=True)
@@ -19,7 +20,7 @@ def debug_task(self):
 
 ##定时任务
 app.conf.update(
-    CELERYBEAT_SCHEDULE={
+    beat_schedule={
         'demo1': {
             'task': 'system.tasks.system_demo',
             'schedule': timedelta(seconds=10),
@@ -27,7 +28,7 @@ app.conf.update(
         },
         'demo2': {
             'task': 'system.tasks.system_demo',
-            'schedule': crontab(minute=00, hour=00,day_of_month=1),
+            'schedule': crontab(minute=00, hour=00, day_of_month=1),
             'args': [222]
         },
     }
